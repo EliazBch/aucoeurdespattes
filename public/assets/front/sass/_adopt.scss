@@ -1,0 +1,46 @@
+.adopt-container{
+    .adopt-animal{
+        object-fit:cover;
+        width:100%;
+        height:80%;
+        border-radius: 0.9rem;
+    }
+    h1{
+        font-size:0.9rem;
+        color:#3E3E3E;
+        margin-left:3%;
+        margin-bottom: 5%;
+    }
+    .animal-adopt{
+        padding-right:5%;
+        padding-left:5%;
+    }
+    .adopt-image{
+        width:100%;
+    }
+    h2{
+        text-align: center;
+        background-color: #9747FF;
+        color: #fff;
+        margin-right: 35%;
+        margin-left: 35%;
+        font-size: 0.9rem;
+        padding: 2%;
+        border-radius:0.55rem;
+    }
+    .animal-column{
+        padding-right:5%;
+        padding-left:5%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .animal-column {
+    display: flex;
+    flex-wrap: wrap;
+}
+.animal-adopt {
+    width: 50%;
+    margin-bottom: 20px; 
+}
+}

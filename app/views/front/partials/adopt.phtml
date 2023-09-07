@@ -1,0 +1,21 @@
+<!-- Page Adopt -->
+<div class="adopt-container">
+    <img class="adopt-image" src="/final-project/public/assets/front/img/adopt.png" alt="L'image avec le fond violet en tête de page adopt" />
+    <div class="adopt-container2">
+        <h1>À Adopter :</h1>
+        <div class="animal-column">
+            <?php foreach ($this->data as $animal) : ?>
+                <div class="animal-adopt">
+                    <a href="?page=animal&subpage=<?= $animal->getId() ?>">
+                        <img class="adopt-animal" width="100" height="250" src="assets/front/img/<?= $animal->getImg() ?>" alt="" />
+                        <h2><?= $animal->getName() ?></h2>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+ 
+
+
+

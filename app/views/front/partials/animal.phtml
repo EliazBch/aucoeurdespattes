@@ -1,0 +1,30 @@
+<article class="animal">
+    <div class="article-content">
+        <div class="container-header-subpage">
+        <div class="article-identity">
+            <div class="article-identity-block">
+            <h1>Name: <?= $data->getName() ?></h1>
+            <h1>Sexe: <?= $data->getSexe() ?></h1>
+            <h1>Age:  <?= $data->getAge()  ?></h1>
+            </div>
+        </div>
+            <img src="<?= $base_uri[0]; ?>/public/assets/front/img/<?= $data->getImg() ?>"  alt="" ?>
+        </div>
+        <div class="container-main-subpage">
+        <div class="content-article">
+        <div class="description">
+            <h2>Description :</h2> 
+            <p><?= $data->getDescription() ?></p>
+            <a class="favoris-button" href="#">Favoris</a>
+        </div>
+        <div class="more-information">
+            <h2>Informations Complémentaires :</h2>
+             <p><?= $data->getStatus() ?></p>
+             <p><?= $data->getType() ?></p>
+            </div>
+        </div>
+        </div>
+    </div>
+</article>
+
+

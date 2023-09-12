@@ -4,31 +4,28 @@ namespace App\Controllers;
 
 class MainController
 {
-    // Propriétés de la classe
-    protected string $view; // Vue à afficher
-    protected $subPage; // Sous-page (non utilisée dans ce code)
-    protected $data; // Données associées à la vue (non utilisées dans ce code)
-    protected string $viewType = 'front'; // Type de vue (front-end dans ce cas)
+    
+    protected string $view; 
+    protected $subPage; 
+    protected $data; 
+    protected string $viewType = 'front'; 
 
-    // Méthode pour afficher la vue
     public function render(): void
     {
         $base_uri = explode('/public/', $_SERVER['REQUEST_URI']);
         $data=$this->data;
-        require(__DIR__ . '/../views/front/layouts/header.phtml'); // Inclusion de l'en-tête de la page
-        require(__DIR__ . '/../views/front/partials/' . $this->view . '.phtml'); // Inclusion de la vue spécifique
-        require(__DIR__ . '/../views/front/layouts/footer.phtml'); // Inclusion du pied de page
+        require(__DIR__ . '/../views/' . $this->viewType . '/layouts/header.phtml'); 
+        require(__DIR__ . '/../views/' . $this->viewType . '/partials/' . $this->view . '.phtml'); 
+        require(__DIR__ . '/../views/' . $this->viewType . '/layouts/footer.phtml'); 
     }
     
     protected function checkUserAuthorization(int $role): bool
     {
-        if (isset($_SESSION['userObject'])) {
+        if (isset($_SESSION['user_role'])) {
             
-            $currentUser = $_SESSION['userObject'];
-            
-            $currentUserRole = $currentUser->getRole();
+            $currentUserRole = $_SESSION['user_role'];
         
-            if ($currentUserRole <= $role) {
+            if ($currentUserRole >= $role) {
                 
                 return true;
             } else {
@@ -51,27 +48,31 @@ class MainController
         }
     }
     
-    // Méthode pour obtenir le nom de la vue
-    public function getView()
+    public function getView(): string
     {
         return $this->view;
     }
 
-    // Méthode pour définir le nom de la vue
-    public function setView($view)
+    public function setView($view): void
     {
         $this->view = $view;
     }
-    public function getData(){
+    
+    public function getData(): string
+    {
         return $this->data;
     }
-    public function setData($newData){
+    
+    public function setData($newData): void
+    {
         $this->data=$newData;
     }
+    
     public function getSubPage(): string
     {
         return $this->subPage;
     }
+    
     public function setSubPage(?string $value): void
     {
         $this->subPage = $value;

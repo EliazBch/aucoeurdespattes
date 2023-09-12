@@ -101,7 +101,7 @@ class UserController extends MainController
         
                 $base_uri = explode('index.php', $_SERVER['SCRIPT_NAME']);
                 
-                if($user->getRole() >= 2) {
+                if($user->getRole() > 0) {
                     header('Location:' . $base_uri[0] . 'admin');
                 }      
                 else{

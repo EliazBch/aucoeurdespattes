@@ -1,0 +1,16 @@
+<header>
+    <nav class="navbar-admin">
+        <div class="logo">
+            <img class="logo" width="160" height="80" src="/final-project/public/assets/front/img/logo.jpg" alt="Logo au coeur des pattes"/>
+            <label class="logo1">Au Cœur des Pattes</label>
+        </div>
+        <div class="navlinks">
+            <ul>
+                 <?php if (!isset($_SESSION['user_id'])): ?>
+                 <?php else: ?>
+                 <li><a href="<?= $base_uri[0] ?>/public/logout">Deconnexion</a></li>
+                 <?php endif; ?>
+            </ul>
+        </div>
+    </nav>
+</header>

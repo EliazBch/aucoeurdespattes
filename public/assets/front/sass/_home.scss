@@ -1,0 +1,120 @@
+.container-home{
+    .banner {
+        background-image: url("/final-project/public/assets/front/img/catsdog.png");
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height:600px;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .title-home{
+        width: 300px;
+        position: absolute;
+        display: flex;
+        text-align: center;
+        color:#FAFDF9;
+        font-weight:bold;
+        font-size:0.9rem;
+    }
+    .red{
+        color:#FF5252;
+    }
+    #redirectionButton{
+        background-color: #9747FF;
+        color: #fff;
+        font-size: 1.2rem;
+        padding: 2% 2vw;
+        cursor: pointer;
+        margin-bottom:15%;
+    }
+    .button-bloc{
+        text-align:center;
+        p{
+            padding-right: 3%;
+            padding-left: 3%;
+        }
+    }
+    
+    .content-home{
+        margin-right:5%;
+        margin-left:5%;
+    }
+    .sad-dog, .sad-cat, .sad-dog2{
+        object-fit:cover;
+        width:100%;
+    }
+    p{
+        font-size:1.3rem;
+        line-height:30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container-home{
+    .title-home{
+        font-size: 1.3rem;
+        width: 650px;
+    }
+    #redirectionButton{
+        padding: 2% 15vw;
+        margin-bottom:8%;
+        margin-top: 3%;
+    }
+    .button-bloc{
+        text-align:center;
+        p{
+            text-align: start;
+            padding-right: 5%;
+            padding-left: 5%;
+        }
+    }
+    .sad-dog1, .sad-cat, .sad-dog2{
+        padding-bottom: 5%;
+    }
+    p{
+        line-height:35px;
+    }
+}
+}
+
+@media screen and (min-width: 1280px) {
+    .container-home{
+    .banner{
+        height:800px;
+    }
+    .title-home{
+        font-size: 1.5rem;
+        text-align: start;
+    }
+    #redirectionButton{
+        padding: 1% 5vw;
+    }
+    .button-bloc{
+        text-align:center;
+    }
+    .sad-dog1, .sad-dog2{
+        display:flex;
+        align-items:center;
+        padding-bottom:5%;
+        p{
+            margin-left:5%;
+            width:900Px;
+        }
+    }
+    .sad-cat{
+        display:flex;
+        flex-direction: row-reverse;
+        align-items:center;
+        padding-bottom:5%;
+        p{
+            margin-right:5%;
+            width:1500px;
+        }
+    }
+    p{
+        line-height:35px;
+    }
+}
+}

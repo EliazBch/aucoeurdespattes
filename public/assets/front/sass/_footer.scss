@@ -1,6 +1,5 @@
 footer{
     width:100%;
-    margin-top:10%;
     background-color:#9747FF;
     padding-right:10vw;
     padding-left:10vw;
@@ -31,12 +30,15 @@ footer{
     }
     .footer-page{
         padding-bottom: 5vh;
+        padding-top: 8vh;
+    }
+    .container{
+        height: 120px;
     }
 }
 
 @media (min-width:1024px) {
     footer{
-    margin-top:10%;
     background-color:#9747FF;
     padding-right:10vw;
     padding-left:10vw;

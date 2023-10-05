@@ -12,7 +12,7 @@ const AVAIABLE_ROUTES = [
         'controller' => 'MainController',
     ],
     'contact'=> [
-        'action' => 'render',
+        'action' => 'renderContact',
         'controller' => 'ContactController',
     ],
     'adopt'=> [
@@ -39,18 +39,26 @@ const AVAIABLE_ROUTES = [
         'action' => 'renderAdmin',
         'controller' => 'AdminController'
     ],
+    'add'=>[
+        'action' => 'renderAdmin',
+        'controller' => 'AdminController'
+    ],
 ];
 
 $page = 'home';
 $subPage=null;
 $controller;
 $action;
+$id=null;
 
 if(isset($_GET['page']) && !empty($_GET['page'])){    
     $page = $_GET['page'];
     
      if(!empty($_GET['subpage'])){
-        $subPage = $_GET['subpage'];        
+        $subPage = $_GET['subpage'];
+        if(!empty($_GET['id'])){
+            $id = $_GET['id'];
+        }
     }
 }else{
     $page = 'home';    
@@ -71,4 +79,5 @@ $namespaceController = $namespace.'\\'.$controller;
 $pageController = new $namespaceController();
 $pageController->setView($page);
 $pageController->setSubPage($subPage);
+$pageController->setId($id);
 $pageController->$action();

@@ -1,0 +1,15 @@
+.contactContainer{
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+    .localisation{
+        iframe{
+            width:80rem;
+            padding:50px;
+            height:40rem;
+        }
+    }
+    .inputGroup{
+        padding:10px;
+    }
+}

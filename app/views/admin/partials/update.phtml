@@ -1,0 +1,19 @@
+<div id="content">
+    
+        <!-- Page Heading -->
+        <div class="update-animal">
+            <h1>Update animal</h1>
+        </div>
+        <form  method="post">
+              <input class="input" type="hidden" name="id" value="<?=$data['animal']->getId(); ?>">
+              <input class="input" type="text" name="name" value="<?=$data['animal']->getName(); ?>">
+              <input class="input" type="text" name="sexe" value="<?=$data['animal']->getSexe(); ?>">
+              <input class="input" type="number" name="age" value="<?=$data['animal']->getAge(); ?>">
+              <input class="input" type="text" name="type" value="<?=$data['animal']->getType(); ?>">
+              <textarea id="update-textarea" name="description" rows="10" cols="50"></textarea>
+              <input type="submit" name="updateAnimal" value="update">
+        </form>
+</div>
+<script>
+    document.getElementById("update-textarea").value = "<?=$data['animal']->getDescription(); ?>";
+</script>

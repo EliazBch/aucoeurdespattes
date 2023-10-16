@@ -31,17 +31,14 @@ class UserController extends MainController
             $name = filter_input(INPUT_POST, 'name');
         
         if (!$email || !$password || !$name){
-            $errors = 1;
-            $this->data[] = '<div class="alert alert-danger" role="alert">Tous les champs sont obligatoires</div>';
+            echo '<div class="alert alert-danger" role="alert">Tous les champs sont obligatoires</div>';
         }
         $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
         if ($email === false) {
-            $errors = 1;
-            $this->data[] = '<div class="alert alert-danger" role="alert">Le format de l\'email n\'est pas valide.</div>';
+            echo '<div class="alert alert-danger" role="alert">Le format de l\'email n\'est pas valide.</div>';
         }
         if (strlen($password) < 8){
-            $errors = 1;
-            $this->data[] = '<div class="alert alert-danger" role="alert">Le mot de passe doit contenir au moins 8 caractères.</div>';
+            echo '<div class="alert alert-danger" role="alert">Le mot de passe doit contenir au moins 8 caractères.</div>';
         }
         
         if ($errors < 1) {
@@ -57,19 +54,7 @@ class UserController extends MainController
             
             if ($user->checkEmail()) {
                
-                $errors = 1;
-                $this->data[] = '<div class="alert alert-danger" role="alert">Cet email est déjà pris, veuillez en choisir un autre.</div>';
-            }
-           
-            if ($errors < 1) {
-                
-                if ($user->registerUser()) {
-                    
-                    $this->data[] =  '<div class="alert alert-success" role="alert">Enregistrement réussi, vous pouvez maintenant vous connecter</div>';
-                } else {
-                    
-                    $this->data[] = '<div class="alert alert-danger" role="alert">Il y a eu une erreur lors de l\enregistrement</div>';
-                }
+                echo '<div class="alert alert-danger" role="alert">Cet email est déjà pris, veuillez en choisir un autre.</div>';
             }
         }
     }
@@ -88,7 +73,7 @@ class UserController extends MainController
         
         if (is_null($user)) {
             
-            $errors = 1;
+             echo '<div class="alert alert-danger" role="alert">Email incorrect</div>';
         } else {
             
             if (password_verify($_POST['password'], $user->getPassword())) {
@@ -109,14 +94,10 @@ class UserController extends MainController
                 }
             } else {
                 
-                $errors = 1;
+                 echo '<div class="alert alert-danger" role="alert">mot de passe incorrect</div>';
             }
         }
-
-        if ($errors > 0) {
            
-            $this->data[] = '<div class="alert alert-danger" role="alert">Email ou mot de passe incorrect</div>';
-        }
     }
 
     public function logout(): void

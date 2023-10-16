@@ -85,22 +85,17 @@
 }
 }
 }
+
 @media (min-width:1280px) {
   .animal{
-    width:100%;
-    .container-header-subpage{
-        img{
-            width:70%;
-        }
-        .article-identity{
-            width:30%;
-        }
-        .article-identity-block{
-            font-size:1.2rem;
-        }
-    }
    .content-article{
        display:flex;
+   }
+   .container-main-subpage{
+       height:300px;
+   }
+   .description p{
+       margin-bottom:10%;
    }
 }
 }

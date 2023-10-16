@@ -1,3 +1,7 @@
+<?php
+use App\Models\FavoriModel;
+$FavoriModel = new FavoriModel();
+?>
 <article class="animal">
     <div class="article-content">
         <div class="container-header-subpage">
@@ -15,7 +19,23 @@
         <div class="description">
             <h2>Description :</h2> 
             <p><?= $data->getDescription() ?></p>
-            <a class="favoris-button" href="#">Favoris</a>
+            <?php if(isset($_SESSION['user_id'])):
+            ?>
+        <form id="favori-form" method="POST">
+            <input type="hidden" name="animal_id" value="<?= $data->getId() ?>">
+            <?php
+                if($FavoriModel->isFavori($data->getId(),$_SESSION['user_id'])):
+            ?>
+                <button type="submit" name="remove-fav-button" id="favori-button">Supprimer des favoris</button>
+            <?php
+                else:
+            ?>
+                <button type="submit" name="fav-button" id="favori-button">❤️ Ajouter aux favoris</button>
+            <?php endif; ?>
+        </form>
+<?php else: ?>
+    <p>Connectez vous pour ajouter aux favoris :)</p>
+    <?php endif; ?>
         </div>
         <div class="more-information">
             <h2>Informations Complémentaires :</h2>
@@ -26,5 +46,7 @@
         </div>
     </div>
 </article>
+
+
 
 

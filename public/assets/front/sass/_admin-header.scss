@@ -1,0 +1,22 @@
+.navbar-admin{
+    display:flex;
+    justify-content:space-between;
+    background-color:#3E3E3E;
+    .logo{
+        display:flex;
+        align-items:center;
+        color:#fff;
+        padding-left:3%;
+    }
+    .navlinks{
+        display:flex;
+        align-items:center;
+        padding-right:2%;
+    }
+    ul li a {
+        color:#fff;
+    }
+    .logo1{
+        margin-left:10px;
+    }
+}

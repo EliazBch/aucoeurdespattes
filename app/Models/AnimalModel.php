@@ -93,7 +93,7 @@ class AnimalModel
         $pdo = DataBase::connectPDO();
         $sql = 'DELETE FROM `animal` WHERE id = :id';
         $query = $pdo->prepare($sql);
-        $query->bindParam('id', $animal, PDO::PARAM_INT);
+        $query->bindParam(':id', $animal, PDO::PARAM_INT);
         $queryStatus = $query->execute();
         return $queryStatus;
     }

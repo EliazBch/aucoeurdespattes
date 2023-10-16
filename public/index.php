@@ -43,6 +43,10 @@ const AVAIABLE_ROUTES = [
         'action' => 'renderAdmin',
         'controller' => 'AdminController'
     ],
+    'favori'=>[
+        'action' => 'renderFavori',
+        'controller' => 'FavoriController'
+    ],
 ];
 
 $page = 'home';

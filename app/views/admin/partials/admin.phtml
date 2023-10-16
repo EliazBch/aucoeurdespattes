@@ -1,44 +1,44 @@
 <!-- Main Content -->
 <div id="content">
-                            <div class="row">
-                                <a href="<?= $base_uri[0]; ?>/public/add">add animals</a>
-                                    <table class="dataTable">
-                                        <thead>
-                                            <tr>
-                                                <th class="name-admin" aria-label="name">name</th>
-                                                <th class="sexe-admin" aria-label="sexe">sexe</th>
-                                                <th class="age-admin" aria-label="age">age</th>
-                                                <th class="img-admin" aria-label="image">image</th>
-                                                <th class="description-admin" aria-label="description">description</th>
-                                                <th class="status-admin" aria-label="status">status</th>
-                                                <th class="type-admin" arial-label="type">type</th>
-                                                <th class="date-admin" arial-label="date">date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($data['animal'] as $animal) : ?>
-                                                <tr>
-                                                    <td><?= $animal->getName(); ?></td>
-                                                    <td><?= $animal->getAge(); ?></td>
-                                                    <td><?= $animal->getSexe(); ?></td>
-                                                    <img src="<?= $base_uri[0]; ?>/public/assets/front/img/<?= $animal->getImg() ?>"  width="100" height="100" alt="" ?>
-                                                    <td><?= $animal->getDescription(); ?></td>
-                                                    <td><?= $animal->getStatus(); ?></td>
-                                                    <td><?= $animal->getType(); ?></td>
-                                                    <td><?= $animal->getdate(); ?></td>
-                                                    <td>
-                                                        <form class="delete-animal" action="" method="post">
-                                                            <input type="hidden" name="animalid" value="<?= $animal->getId(); ?>">
-                                                            <input class="btn btn-primary" name="deleteAnimal" type="submit" value="Delete">
-                                                        </form>
-                                                    </td>
-                                                    <td>                                                                                                                    
-                                                        <a class="btn-primary" href="<?= $base_uri[0]; ?>/public/admin/update/<?= $animal->getId(); ?>">Update animal</a>                                                        
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach ?>
-
-                                    </table>
-                                </div>
-                </div>
+    <div class="row">
+        <table class="data-table">
+            <div class="add">
+                <a href="<?= $base_uri[0]; ?>/public/add">add animals</a>
+            </div>
+            <h1>Gestion des animaux</h1>
+            <thead class="table-top">
+                <tr>
+                    <th class="name-admin" aria-label="name">name</th>
+                    <th class="sexe-admin" aria-label="sexe">sexe</th>
+                    <th class="age-admin" aria-label="age">age</th>
+                    <th class="img-admin" aria-label="image">image</th>
+                    <th class="description-admin" aria-label="description">description</th>
+                    <th class="status-admin" aria-label="status">status</th>
+                    <th class="type-admin" arial-label="type">type</th>
+                    <th class="date-admin" arial-label="date">date</th>
+                </tr>
+            </thead>
+        <tbody>
+            <?php foreach ($data['animal'] as $animal) : ?>
+                <tr>
+                    <td><?= $animal->getName(); ?></td>
+                    <td><?= $animal->getSexe(); ?></td>
+                    <td><?= $animal->getAge(); ?></td>
+                    <td><img src="<?= $base_uri[0]; ?>/public/assets/front/img/<?= $animal->getImg() ?>"  width="50" height="50" alt="" ?></td>
+                    <td><?= $animal->getDescription(); ?></td>
+                    <td><?= $animal->getStatus(); ?></td>
+                    <td><?= $animal->getType(); ?></td>
+                    <td><?= $animal->getdate(); ?></td>
+                <td>
+                    <form class="delete-animal" action="" method="post">
+                        <input type="hidden" name="animalid" value="<?= $animal->getId(); ?>">
+                        <input class="btn btn-delete" name="deleteAnimal" type="submit" value="Delete">
+                        <a class="btn-primary" href="<?= $base_uri[0]; ?>/public/admin/update/<?= $animal->getId(); ?>">Update</a>
+                    </form>
+                </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+        </table>
+    </div>
 </div>

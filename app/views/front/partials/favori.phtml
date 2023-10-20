@@ -2,7 +2,10 @@
 use App\Models\AnimalModel;
 $AnimalModel = new AnimalModel();
 ?>
-<h1>Vous êtes sur la page favori</h1>
+<div class="fav-container">
+<h1>Mes favoris</h1>
+<p>Ici, c'est tout pour vos <span class="red">amis à quatre pattes</span>. Nous avons rassemblé une <span class="red">collection spéciale d'animaux</span> que vous avez choisis comme vos favoris. Chaque créature que vous trouverez ici a été sélectionnée pour célébrer <span class="red">la beauté et la diversité du règne animal</span>, 
+   car nous partageons votre amour pour ces <span class="red">merveilleuses créatures</span>.</p>
 <div class="animal-column">
         <?php foreach ($this->data as $animal_id) : ?>
             <div class="animal-adopt">
@@ -10,9 +13,10 @@ $AnimalModel = new AnimalModel();
                 $animal= $AnimalModel->getAnimalById($animal_id['animal_id']);
                 ?>
                 <a href="animal/<?= $animal->getId() ?>">
-                    <img class="adopt-animal" width="100" height="250" src="assets/front/img/<?= $animal->getImg() ?>" alt="chiens ou chats du refuge au coeur des pattes">
+                    <img class="adopt-animal" width="300" height="250" src="assets/front/img/<?= $animal->getImg() ?>" alt="chiens ou chats du refuge au coeur des pattes">
                     <h2><?= $animal->getName() ?></h2>
                 </a>
         </div>
     <?php endforeach; ?>
+    </div>
 </div>

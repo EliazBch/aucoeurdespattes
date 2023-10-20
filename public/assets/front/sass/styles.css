@@ -60,6 +60,9 @@ header .close-menu {
 header #check {
   display: none;
 }
+header .logo1 {
+  font-size: 15px;
+}
 
 @media (max-width: 1280px) {
   header .menu {
@@ -101,8 +104,10 @@ footer h1 {
 footer .facebook {
   fill: #fff;
   margin-right: 5%;
+  cursor: pointer;
 }
 footer .instagram {
+  cursor: pointer;
   fill: #fff;
 }
 footer .header-footer {
@@ -185,7 +190,7 @@ footer .container {
 .container-home .red {
   color: #FF5252;
 }
-.container-home #redirectionButton {
+.container-home #redirection-Button {
   background-color: #9747FF;
   color: #fff;
   font-size: 1.2rem;
@@ -205,8 +210,10 @@ footer .container {
   margin-left: 5%;
 }
 .container-home .sad-dog, .container-home .sad-cat, .container-home .sad-dog2 {
+  padding-bottom: 5%;
   object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 .container-home p {
   font-size: 1.3rem;
@@ -218,7 +225,7 @@ footer .container {
     font-size: 1.3rem;
     width: 650px;
   }
-  .container-home #redirectionButton {
+  .container-home #redirection-Button {
     padding: 2% 15vw;
     margin-bottom: 8%;
     margin-top: 3%;
@@ -231,55 +238,50 @@ footer .container {
     padding-right: 5%;
     padding-left: 5%;
   }
-  .container-home .sad-dog1, .container-home .sad-cat, .container-home .sad-dog2 {
-    padding-bottom: 5%;
-  }
   .container-home p {
     line-height: 35px;
   }
 }
 @media screen and (min-width: 1280px) {
   .container-home .banner {
-    height: 800px;
+    height: 1000px;
   }
   .container-home .title-home {
     font-size: 1.5rem;
     text-align: start;
   }
-  .container-home #redirectionButton {
+  .container-home #redirection-Button {
     padding: 1% 5vw;
   }
-  .container-home .button-bloc {
-    text-align: center;
-  }
-  .container-home .sad-dog1, .container-home .sad-dog2 {
+  .container-home .sad-dog1, .container-home .sad-dog3 {
     display: flex;
     align-items: center;
-    padding-bottom: 5%;
   }
-  .container-home .sad-dog1 p, .container-home .sad-dog2 p {
+  .container-home .sad-dog1 .sad-dog, .container-home .sad-dog1 .sad-dog2, .container-home .sad-dog3 .sad-dog, .container-home .sad-dog3 .sad-dog2 {
+    width: 800px;
+    height: 100%;
+  }
+  .container-home .sad-dog1 p, .container-home .sad-dog3 p {
     margin-left: 5%;
-    width: 900Px;
   }
-  .container-home .sad-cat {
+  .container-home .sad-cat1 {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
-    padding-bottom: 5%;
+    flex-direction: row-reverse;
   }
-  .container-home .sad-cat p {
+  .container-home .sad-cat1 .sad-cat {
+    width: 800px;
+    height: 100%;
+  }
+  .container-home .sad-cat1 p {
     margin-right: 5%;
-    width: 1500px;
-  }
-  .container-home p {
-    line-height: 35px;
   }
 }
 .about-container .about-first-img {
   width: 100%;
   object-fit: cover;
 }
-.about-container h1 {
+.about-container h2 {
   padding-left: 20px;
   font-weight: bold;
   font-size: 2.5rem;
@@ -335,6 +337,9 @@ footer .container {
 }
 
 @media screen and (min-width: 1024px) {
+  .about-container .about-first-img {
+    height: 600px;
+  }
   .about-container p {
     font-size: 1.4rem;
     padding-bottom: 50px;
@@ -348,13 +353,16 @@ footer .container {
   }
 }
 @media screen and (min-width: 1280px) {
+  .about-container .about-first-img {
+    height: 1000px;
+  }
   .about-container p {
     font-size: 1.4rem;
     padding-bottom: 0px;
     line-height: 30px;
   }
   .about-container .border-img {
-    width: 100%;
+    width: 80%;
   }
   .about-container .p-img1, .about-container .p-img3 {
     display: flex;
@@ -529,7 +537,7 @@ footer .container {
   background-color: #fff;
   color: #3E3E3E;
   padding: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .register-container .register-container-block .register-btn {
   margin-left: 20%;
@@ -538,8 +546,11 @@ footer .container {
   border-radius: 30px;
 }
 .register-container .register-container-block .register-form {
-  height: 240px;
+  height: 285px;
   background-color: #3E3E3E;
+}
+.register-container .register-container-block .rgpd-checkbox {
+  margin-bottom: 10px;
 }
 
 @media (min-width: 1024px) {
@@ -675,20 +686,75 @@ footer .container {
     margin-bottom: 10%;
   }
 }
-.contactContainer {
+.contact-container {
   display: flex;
   text-align: center;
   flex-direction: column;
 }
-.contactContainer .localisation iframe {
-  width: 80rem;
-  padding: 50px;
-  height: 40rem;
+.contact-container .localisation iframe {
+  width: 100%;
+  height: 20rem;
+  padding: 0 20px 20px 20px;
 }
-.contactContainer .inputGroup {
+.contact-container .input {
+  background-color: #fff;
   padding: 10px;
+  margin-bottom: 35px;
+  width: 280px;
+}
+.contact-container #rgpdValidationMessage {
+  color: #FF5252;
+}
+.contact-container h1, .contact-container h2 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #3E3E3E;
+}
+.contact-container .form-contact {
+  background-color: #3E3E3E;
+  height: 500px;
+  padding-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.contact-container .Submitbtn {
+  background-color: #9747FF;
+  border-radius: 20px;
+  width: 110px;
+  height: 25px;
+  margin-bottom: 20px;
 }
 
+@media screen and (min-width: 1024px) {
+  .contact-container .localisation iframe {
+    padding: 0 200px 20px 200px;
+  }
+  .contact-container .input {
+    width: 400px;
+  }
+  .contact-container .form-contact {
+    max-width: 1024px;
+    padding: 50px;
+    margin: auto;
+  }
+  .contact-container .Submitbtn {
+    width: 200px;
+    height: 35px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact-container .localisation iframe {
+    padding: 0 300px 20px 300px;
+    height: 500Px;
+  }
+  .contact-container .input {
+    width: 500px;
+    padding: 20px;
+  }
+  .contact-container .form-contact {
+    height: 100%;
+  }
+}
 .navbar-admin {
   display: flex;
   justify-content: space-between;
@@ -831,6 +897,155 @@ footer .container {
     margin-right: 25%;
     margin-left: 25%;
     padding: 1%;
+  }
+}
+.fav-container {
+  text-align: center;
+}
+.fav-container p {
+  padding-right: 30px;
+  padding-left: 30px;
+  height: 100px;
+}
+.fav-container .red {
+  color: #FF5252;
+}
+.fav-container h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #3E3E3E;
+}
+
+@media screen and (min-width: 1024px) {
+  .fav-container p {
+    padding-right: 120px;
+    padding-left: 120px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .fav-container p {
+    padding-right: 200px;
+    padding-left: 200px;
+  }
+}
+.error-name {
+  position: absolute;
+  color: #FF5252;
+  top: 850px;
+  left: 20;
+}
+
+.error-email {
+  position: absolute;
+  color: #FF5252;
+  top: 880px;
+  left: 20;
+}
+
+.error-pass {
+  position: absolute;
+  color: #FF5252;
+  top: 905px;
+  left: 20;
+}
+
+.error-check {
+  position: absolute;
+  color: #FF5252;
+  top: 945px;
+  left: 20;
+}
+
+.error-login-email {
+  position: absolute;
+  color: #FF5252;
+  top: 835px;
+  left: 20;
+}
+
+.error-login-pass {
+  position: absolute;
+  color: #FF5252;
+  top: 855px;
+  left: 20;
+}
+
+.success-message {
+  color: #067C1E;
+  position: absolute;
+  top: 860px;
+  left: 40px;
+}
+
+@media screen and (min-width: 1024px) {
+  .error-name {
+    background-color: #FF5252;
+    width: 161px;
+    top: 125px;
+    padding: 20px;
+    color: #fff;
+  }
+  .error-pass {
+    background-color: #FF5252;
+    width: 161px;
+    height: 80px;
+    top: 300px;
+    padding: 20px;
+    color: #fff;
+  }
+  .error-email {
+    background-color: #FF5252;
+    width: 161px;
+    height: 80px;
+    top: 213px;
+    padding: 20px;
+    color: #fff;
+  }
+  .error-check {
+    background-color: #FF5252;
+    width: 161px;
+    height: 80px;
+    top: 390px;
+    padding: 15px;
+    color: #fff;
+  }
+  .success-message {
+    color: #067C1E;
+    position: absolute;
+    top: 900px;
+    left: 340px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .error-name {
+    width: 180px;
+  }
+  .error-pass {
+    width: 180px;
+  }
+  .error-email {
+    width: 180px;
+  }
+  .error-check {
+    width: 180px;
+  }
+  .error-login-email {
+    background-color: #FF5252;
+    width: 161px;
+    top: 130px;
+    padding: 20px;
+    color: #fff;
+  }
+  .error-login-pass {
+    background-color: #FF5252;
+    width: 161px;
+    top: 240px;
+    padding: 20px;
+    color: #fff;
+  }
+  .success-message {
+    top: 500px;
+    left: 460px;
   }
 }
 

@@ -30,7 +30,7 @@
       background-color: #fff;
       color: #3E3E3E;
       padding: 10px;
-      margin-bottom: 25px;
+      margin-bottom: 15px;
     }
     .register-btn{
         margin-left: 20%;
@@ -39,10 +39,13 @@
         border-radius: 30px;
     }
     .register-form{
-        height: 240px;
+        height: 285px;
         background-color: #3E3E3E;
     }
+    .rgpd-checkbox{
+        margin-bottom:10px;
     }
+}
 }
 
 @media (min-width: 1024px) {

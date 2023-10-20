@@ -8,50 +8,12 @@
                 <input type="name" name="name" class="name-form" id="input-name" placeholder="Nom">
                 <input type="email" name="email" class="email-form" id="input-email" placeholder="Email">
                 <input type="password" name="password" class="pass-form" id="input-password" placeholder="Mot de passe">
+                <div class="rgpd-checkbox">
+                    <input type="checkbox" name="rgpd" id="rgpd" required>
+                    <label for="rgpd">J'accepte les conditions RGPD</label>
+                </div>
                 <input type="submit" name="registerForm" class="register-btn" value="Register">
             </form>
         </div>
     </div>
 </div>
-
-<script>
-    function validateForm() {
-        document.getElementById("error-container").innerHTML = '';
-        
-        var name = document.getElementById("input-name").value;
-        var email = document.getElementById("input-email").value;
-        var password = document.getElementById("input-password").value;
-
-        var errors = [];
-
-        if (name === '') {
-            errors.push("Le champ 'Nom' est obligatoire.");
-        }
-
-        if (email === '') {
-            errors.push("Le champ 'Email' est obligatoire.");
-        } else if (!isValidEmail(email)) {
-            errors.push("Le format de l'email n'est pas valide.");
-        }
-
-        if (password === '') {
-            errors.push("Le champ 'Mot de passe' est obligatoire.");
-        } else if (password.length < 8) {
-            errors.push("Le mot de passe doit contenir au moins 8 caractères.");
-        }
-
-        if (errors.length > 0) {
-            var errorContainer = document.getElementById("error-container");
-            for (var i = 0; i < errors.length; i++) {
-                errorContainer.innerHTML += errors[i] + '<br>';
-            }
-            return false; 
-        }
-
-        return true; 
-    }
-
-    function isValidEmail(email) {
-        return email.includes('@');
-    }
-</script>

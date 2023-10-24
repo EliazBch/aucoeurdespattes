@@ -1,0 +1,41 @@
+.notification-container{
+    position:absolute;
+    .notification{
+        &.error{
+             width:300px;
+             color:#fff;
+             padding:10px 20px;
+             background-color:#FF5252;
+             margin-bottom:20px;
+             text-align:center;
+             margin-right:30px;
+             margin-left:30px;
+             border: 2px solid red;
+        }
+        &.success{
+             width:300px;
+             color:#fff;
+             padding:10px 20px;
+             background-color:#067C1E;
+             margin-bottom:20px;
+             text-align:center;
+             margin-right:30px;
+             margin-left:30px;
+             border: 2px solid green;
+        }
+    }
+}
+
+
+@media screen and (min-width:1024px){
+.notification-container{
+    .notification{
+        &.error{
+             width:300px;
+        }
+        &.success{
+             width:300px;
+        }
+    }
+}
+}

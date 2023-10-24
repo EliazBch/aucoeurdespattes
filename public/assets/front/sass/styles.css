@@ -219,6 +219,14 @@ footer .container {
   font-size: 1.3rem;
   line-height: 30px;
 }
+.container-home .text-side {
+  background-color: #9747FF;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 2% 2vw;
+  cursor: pointer;
+  margin-bottom: 15%;
+}
 
 @media screen and (min-width: 1024px) {
   .container-home .title-home {
@@ -382,7 +390,8 @@ footer .container {
   border-radius: 0.9rem;
 }
 .adopt-container h1 {
-  font-size: 0.9rem;
+  font-weight: bold;
+  font-size: 2.5rem;
   color: #3E3E3E;
   margin-left: 3%;
   margin-bottom: 5%;
@@ -548,9 +557,6 @@ footer .container {
 .register-container .register-container-block .register-form {
   height: 285px;
   background-color: #3E3E3E;
-}
-.register-container .register-container-block .rgpd-checkbox {
-  margin-bottom: 10px;
 }
 
 @media (min-width: 1024px) {
@@ -928,124 +934,147 @@ footer .container {
     padding-left: 200px;
   }
 }
-.error-name {
+.notification-container {
   position: absolute;
-  color: #FF5252;
-  top: 850px;
-  left: 20;
 }
-
-.error-email {
-  position: absolute;
-  color: #FF5252;
-  top: 880px;
-  left: 20;
+.notification-container .notification.error {
+  width: 300px;
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #FF5252;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-right: 30px;
+  margin-left: 30px;
+  border: 2px solid red;
 }
-
-.error-pass {
-  position: absolute;
-  color: #FF5252;
-  top: 905px;
-  left: 20;
-}
-
-.error-check {
-  position: absolute;
-  color: #FF5252;
-  top: 945px;
-  left: 20;
-}
-
-.error-login-email {
-  position: absolute;
-  color: #FF5252;
-  top: 835px;
-  left: 20;
-}
-
-.error-login-pass {
-  position: absolute;
-  color: #FF5252;
-  top: 855px;
-  left: 20;
-}
-
-.success-message {
-  color: #067C1E;
-  position: absolute;
-  top: 860px;
-  left: 40px;
+.notification-container .notification.success {
+  width: 300px;
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #067C1E;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-right: 30px;
+  margin-left: 30px;
+  border: 2px solid green;
 }
 
 @media screen and (min-width: 1024px) {
-  .error-name {
-    background-color: #FF5252;
-    width: 161px;
-    top: 125px;
-    padding: 20px;
-    color: #fff;
+  .notification-container .notification.error {
+    width: 300px;
   }
-  .error-pass {
-    background-color: #FF5252;
-    width: 161px;
-    height: 80px;
-    top: 300px;
-    padding: 20px;
-    color: #fff;
+  .notification-container .notification.success {
+    width: 300px;
   }
-  .error-email {
-    background-color: #FF5252;
-    width: 161px;
-    height: 80px;
-    top: 213px;
-    padding: 20px;
-    color: #fff;
+}
+.container-error h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #3E3E3E;
+}
+.container-error .error-img {
+  width: 100%;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+@media screen and (min-width: 1024px) {
+  .container-error h1 {
+    font-size: 1.8rem;
   }
-  .error-check {
-    background-color: #FF5252;
-    width: 161px;
-    height: 80px;
-    top: 390px;
-    padding: 15px;
-    color: #fff;
-  }
-  .success-message {
-    color: #067C1E;
-    position: absolute;
-    top: 900px;
-    left: 340px;
+  .container-error .error-img {
+    width: 100%;
+    padding-right: 15%;
+    padding-left: 15%;
   }
 }
 @media screen and (min-width: 1280px) {
-  .error-name {
-    width: 180px;
+  .container-error h1 {
+    font-size: 2.5rem;
   }
-  .error-pass {
-    width: 180px;
+  .container-error .error-img {
+    width: 100%;
+    height: 600px;
+    object-fit: contain;
   }
-  .error-email {
-    width: 180px;
+}
+.legal-information1 {
+  text-align: center;
+}
+.legal-information1 h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #3E3E3E;
+}
+.legal-information1 p {
+  font-size: 1rem;
+  line-height: 25px;
+}
+
+@media screen and (min-width: 1024px) {
+  .legal-information1 {
+    padding-right: 40px;
+    padding-left: 40px;
   }
-  .error-check {
-    width: 180px;
+  .legal-information1 h2 {
+    font-size: 2.5rem;
   }
-  .error-login-email {
-    background-color: #FF5252;
-    width: 161px;
-    top: 130px;
-    padding: 20px;
-    color: #fff;
+  .legal-information1 p {
+    line-height: 40px;
   }
-  .error-login-pass {
-    background-color: #FF5252;
-    width: 161px;
-    top: 240px;
-    padding: 20px;
-    color: #fff;
+}
+@media screen and (min-width: 1280px) {
+  .legal-information1 {
+    padding-right: 100px;
+    padding-left: 100px;
   }
-  .success-message {
-    top: 500px;
-    left: 460px;
+  .legal-information1 p {
+    font-size: 1.4rem;
+  }
+}
+.privacy-policy {
+  text-align: center;
+}
+.privacy-policy h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #3E3E3E;
+}
+.privacy-policy p {
+  font-size: 1rem;
+  line-height: 25px;
+}
+.privacy-policy li {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .privacy-policy {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .privacy-policy h2 {
+    font-size: 2.5rem;
+  }
+  .privacy-policy p {
+    line-height: 40px;
+  }
+  .privacy-policy li {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .privacy-policy {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+  .privacy-policy p {
+    font-size: 1.4rem;
+  }
+  .privacy-policy li {
+    font-size: 1.4rem;
   }
 }
 

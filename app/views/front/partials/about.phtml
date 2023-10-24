@@ -1,6 +1,6 @@
 <div class="about-container">
 <div class="about-content">
-<img class="about-first-img" src="/final-project/public/assets/front/img/dog-cat.jpg" alt="Image d'un petit chien et d'un chat jouant dans une forêt">
+<img class="about-first-img" src="/final-project/public/assets/front/img/dog-cat.png" alt="Image d'un petit chien et d'un chat jouant dans une forêt">
     <section class="section-1">
         <div class="p-img1">
             <div class="bloc-img3">
@@ -11,7 +11,7 @@
                 </p>
             </div>
             <div class="img-section1">
-                <img class="border-img" src="/final-project/public/assets/front/img/pattes.jpg" alt="Une main humaine et une patte de chien côte à côte à même le sol">
+                <img class="border-img" src="/final-project/public/assets/front/img/pattes.png" alt="Une main humaine et une patte de chien côte à côte à même le sol">
             </div>
         </div>
     </section>
@@ -25,7 +25,7 @@
                 </p>
             </div>
             <div class="img-section2">
-                <img class="border-img" src="/final-project/public/assets/front/img/amour-chiens.jpg" alt="Un homme et une femme sûrement ami avec une tasse dans les mains et un petit chien au milieu qui ont l'air joyeux, situation entre ami rien de plus banale">
+                <img class="border-img" src="/final-project/public/assets/front/img/amour-chiens.png" alt="Un homme et une femme sûrement ami avec une tasse dans les mains et un petit chien au milieu qui ont l'air joyeux, situation entre ami rien de plus banale">
             </div>
         </div>
     </section>
@@ -39,7 +39,7 @@
                 </p>
             </div>
             <div class="img-section3">
-                <img class="border-img" src="/final-project/public/assets/front/img/babycat.jpg" alt="un chaton de quelques mois buvant un biberon donné par une personne lambda ça peut-être un homme comme une femme.">
+                <img class="border-img" src="/final-project/public/assets/front/img/babycat.png" alt="un chaton de quelques mois buvant un biberon donné par une personne lambda ça peut-être un homme comme une femme.">
             </div>
         </div>
     </section>
@@ -49,10 +49,11 @@
     <section class="about-carrousel">
         <h2>Nos valeurs :</h2>
         <p><span class="red">Amour</span> et <span class="red">compassion</span> pour les animaux, <span class="red">Adoption responsable</span> et bien-être animal, <span class="red">sensibilisation</span> à la maltraitance animal et l'abandon.</p>
+        <button id="increase-text-size" aria-label="Augmenter la taille du texte, et si vous voulez remmettre la taille de base, il suffit d'actualiser la page">Augmenter la taille du texte</button>
         <div class="slider">
-                <img class="img__slider active" src="/final-project/public/assets/front/img/love-dog.jpg" alt="Une photo en noir et blanc, d'une femme avec un chien, la femme embrasse le chien sous le museau, et ça montre l'amour d'un humain pour son chien">
-                <img class="img__slider" src="/final-project/public/assets/front/img/cat-black.jpg" alt="Une photo en noir et blanc d'un chaton regardant vers l'appareil photo, et un doigt humain qui touche son nez ">
-                <img class="img__slider" src="/final-project/public/assets/front/img/hand.jpg" alt="Une photo en noir et blanc, d'une main humaine qui prend la patte d'un chien comme si elle voulait nous la montrer">
+                <img class="img__slider active" src="/final-project/public/assets/front/img/love-dog.png" alt="Une photo en noir et blanc, d'une femme avec un chien, la femme embrasse le chien sous le museau, et ça montre l'amour d'un humain pour son chien">
+                <img class="img__slider" src="/final-project/public/assets/front/img/cat-black.png" alt="Une photo en noir et blanc d'un chaton regardant vers l'appareil photo, et un doigt humain qui touche son nez ">
+                <img class="img__slider" src="/final-project/public/assets/front/img/hand.png" alt="Une photo en noir et blanc, d'une main humaine qui prend la patte d'un chien comme si elle voulait nous la montrer">
             <div class="next">
                 <i class="fas fa-chevron-circle-right" style="color: #9747FF;"></i>
             </div>
@@ -62,3 +63,19 @@
         </div>
     </section>
 </div>
+
+<script>
+var paragraphs = document.querySelectorAll('p');
+  
+  document.getElementById('increase-text-size').addEventListener('click', function() {
+    paragraphs.forEach(function(paragraph) {
+        
+      var currentSize = window.getComputedStyle(paragraph, null).getPropertyValue('font-size');
+      
+      var newSize = (parseInt(currentSize) + 2) + 'px';
+      
+      paragraph.style.fontSize = newSize;
+    });
+  });
+</script>
+<script src="/final-project/public/assets/front/js/app.js"></script>

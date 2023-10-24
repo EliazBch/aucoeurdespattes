@@ -1,3 +1,11 @@
+<?php if (!empty($this->data['message'])) : ?>
+            <div class="notification-container">
+        <?php foreach ($this->data['message'] as $error) : ?>
+            <?php echo $error; ?>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
 <div class="register-container">
     <div class="register-container-block">
         <img class="img-register" width="280" height="400" src="/final-project/public/assets/front/img/wolf-font.jpg" alt="image chat pour inscription">

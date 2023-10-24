@@ -1,5 +1,6 @@
 <?php
 require __DIR__ .'/../vendor/autoload.php';
+
 session_start();
 
 const AVAIABLE_ROUTES = [
@@ -47,6 +48,14 @@ const AVAIABLE_ROUTES = [
         'action' => 'renderFavori',
         'controller' => 'FavoriController'
     ],
+    'privacypolicy'=>[
+        'action' => 'render',
+        'controller' => 'MainController'
+    ],
+    'legalinformation'=>[
+        'action' => 'render',
+        'controller' => 'MainController'
+    ],
 ];
 
 $page = 'home';
@@ -74,7 +83,7 @@ if(array_key_exists($page, AVAIABLE_ROUTES)){
 } else {
     $page = '404';
     $controller = 'ErrorController';
-    $render = 'render';
+    $action = 'render';
 }
 
 $namespace = 'App\Controllers';

@@ -21,9 +21,9 @@ class AnimalController extends MainController{
           $res= $favoriModel->removeFavori($_POST['animal_id'],$_SESSION['user_id']);
         }
           if ($res == true){
-            echo 'ça a marché';
+            echo '<div style="top: 870px; position:absolute; padding-left:200px; color: #067C1E;">Votre animal a été ajouté aux favoris</div>';
           } else if ($res == false){
-            echo 'ça n\'a pas marché';
+            echo 'Il y a eu une erreur, votre animal n\'a pas été ajouté aux favoris';
           }
       }
       $AnimalModel= new AnimalModel();

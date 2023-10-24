@@ -26,11 +26,11 @@ $FavoriModel = new FavoriModel();
             <?php
                 if($FavoriModel->isFavori($data->getId(),$_SESSION['user_id'])):
             ?>
-                <button type="submit" name="remove-fav-button" id="favori-button">Supprimer des favoris</button>
+                <button type="submit" name="remove-fav-button" id="favori-button" style="padding: 10px 20px; cursor: pointer; font-size: 1.5rem; border-radius: 10px; background-color:#fff; border: 2px solid #9747FF; color: #9747FF;">Supprimer des favoris</button>
             <?php
                 else:
             ?>
-                <button type="submit" name="fav-button" id="favori-button">❤️ Ajouter aux favoris</button>
+                <button type="submit" name="fav-button" id="favori-button" style="padding: 10px 20px; cursor: pointer; font-size: 1.5rem; border-radius: 10px; background-color:#fff; border: 2px solid #9747FF; color: #9747FF;">❤️ Ajouter aux favoris</button>
             <?php endif; ?>
         </form>
 <?php else: ?>

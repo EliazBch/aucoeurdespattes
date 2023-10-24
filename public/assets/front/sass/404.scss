@@ -1,0 +1,39 @@
+.container-error{
+    h1{
+        text-align:center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color:#3E3E3E;
+    }
+    .error-img{
+        width:100%;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+}
+
+@media screen and (min-width:1024px){
+.container-error{
+    h1{
+        font-size: 1.8rem;
+    }
+    .error-img{
+        width:100%;
+        padding-right: 15%;
+        padding-left: 15%;
+    }
+}
+}
+
+@media screen and (min-width:1280px){
+.container-error{
+    h1{
+        font-size: 2.5rem;
+    }
+    .error-img{
+        width:100%;
+        height:600px;
+        object-fit:contain;
+    }
+}
+}

@@ -1,3 +1,11 @@
+<?php if (!empty($this->data['message'])) : ?>
+            <div class="notification-container">
+        <?php foreach ($this->data['message'] as $error) : ?>
+            <?php echo $error; ?>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
 <div class="login-container">
     <div class="login-container-block">
         <img class="img-login" width="280" height="400" src="/final-project/public/assets/front/img/wolf-font.jpg" alt="image loup pour connexion">

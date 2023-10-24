@@ -1,0 +1,44 @@
+.privacy-policy{
+    text-align:center;
+    h2{
+        font-weight: bold;
+        font-size: 2rem;
+        color: #3E3E3E;
+    }
+    p{
+        font-size: 1rem;
+        line-height: 25px;
+    }
+    li{
+        font-size:1rem;
+    }
+}
+
+@media screen and (min-width:1024px){
+.privacy-policy{
+    padding-right: 40px;
+    padding-left: 40px;
+    h2{
+        font-size: 2.5rem;
+    }
+    p{
+        line-height: 40px;
+    }
+    li{
+        font-size: 1.2rem;
+    }
+}
+}
+
+@media screen and (min-width:1280px){
+.privacy-policy{
+    padding-right: 100px;
+    padding-left: 100px;
+p{
+    font-size:1.4rem;
+}
+li{
+    font-size:1.4rem;
+}
+}
+}

@@ -2,28 +2,28 @@
     <h1>Nous contacter</h1>
     <form id="form" class="form-contact" method="post">
     <div class="input-group">
-        <label for="name"></label>
+        <label for="name" style="color: #fff;">Votre Nom</label>
             <input type="text" id="name" name="name" class="input" placeholder="votre nom..." required>
         </div>
     <div class="input-group">
-        <label for="email"></label>
+        <label for="email" style="color: #fff;">Votre Email</label>
             <input type="email" id="email" class="input" name="email" placeholder="votre email..." required>
         </div>
     <div class="input-group">
-        <label for="message"></label>
-            <textarea id="message" class="input" name="message" rows="10" cols="33" required>message...</textarea>
+        <label for="message" style="color: #fff;">Un Message</label>
+            <textarea id="message" class="input" name="message" rows="10" cols="23" required>message...</textarea>
         </div>
     <div class="input-submit" id="submit">
             <input type="submit" class="Submitbtn" value="Envoyer">
         </div>
     <div class="input-checkbox">
         <input type="checkbox" name="checkbox" class="checkboxbtn" id="rgpdCheckbox">
-            <label for="rgpdCheckbox">J'accepte les conditions RGPD</label>
+            <label for="rgpdCheckbox" style="color: #fff;">J'accepte les conditions RGPD</label>
         </div>
         <div id="rgpdValidationMessage"></div>
 </form>
-    <div id="successMessage" style="color: green;"></div>
-    <div id="errorMessage" style="color: red;"></div>
+    <div id="successMessage" style="color: #067C1E;"></div>
+    <div id="errorMessage" style="color: #9747FF;"></div>
     <figure>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3828.4987376224894!2d-2.225597836732836!3d47.2721771944143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1694607874228!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <figcaption>Carte de notre emplacement</figcaption>
@@ -31,42 +31,50 @@
 </div>
 
 <script>
-const form = document.getElementById("form");
-const submit = document.getElementById("submit");
-const rgpdCheckbox = document.getElementById("rgpdCheckbox");
-const rgpdValidationMessage = document.getElementById("rgpdValidationMessage");
-const successMessage = document.getElementById("successMessage");
-const errorMessage = document.getElementById("errorMessage"); 
+// Sélectionnez les éléments du formulaire et d'autres éléments HTML nécessaires
+const form = document.getElementById("form"); // Sélectionne le formulaire par son ID
+const submit = document.getElementById("submit"); // Sélectionne le bouton de soumission du formulaire
+const rgpdCheckbox = document.getElementById("rgpdCheckbox"); // Sélectionne la case à cocher RGPD
+const rgpdValidationMessage = document.getElementById("rgpdValidationMessage"); // Sélectionne l'élément pour afficher le message de validation RGPD
+const successMessage = document.getElementById("successMessage"); // Sélectionne l'élément pour afficher le message de succès
+const errorMessage = document.getElementById("errorMessage"); // Sélectionne l'élément pour afficher les messages d'erreur
 
+// Ajoute un écouteur d'événements sur la soumission du formulaire
 form.addEventListener("submit", function(e){
-    e.preventDefault();
+    e.preventDefault(); // Empêche le formulaire de se soumettre normalement
 
+    // Vérifie si la case RGPD n'est pas cochée
     if (!rgpdCheckbox.checked) {
-        rgpdValidationMessage.textContent = "Veuillez accepter les conditions RGPD pour continuer.";
-        return;
+        rgpdValidationMessage.textContent = "Veuillez accepter les conditions RGPD pour continuer."; // Affiche un message d'erreur
+        return; // Arrête la soumission du formulaire
     } else {
-        rgpdValidationMessage.textContent = "";
+        rgpdValidationMessage.textContent = ""; // Efface le message d'erreur RGPD s'il est cochée
     }
 
+    // Ajoute une classe CSS pour indiquer que la soumission est en cours
     submit.classList.add("submitBtnConfirm");
 
+    // Crée un objet FormData contenant les données du formulaire
     const payload = new FormData(form);
 
+    // Envoie une requête POST asynchrone au serveur
     fetch("https://eliazbouchon.sites.3wa.io/final-project/public/contact", {
         method: "POST",
-        body: payload,
+        body: payload, // Envoie les données du formulaire dans le corps de la requête
     })
-    .then(res => res.json())
+    .then(res => res.json()) // Transforme la réponse en JSON
     .then(res =>{
         if(res.status == true){
-            form.style.display = 'none';
-            successMessage.textContent = "Le message a été envoyé avec succès, un staff du refuge vous répondra au plus vite :).";
-            errorMessage.textContent = ""; 
+            // Si la réponse du serveur indique que l'envoi a réussi
+            form.style.display = 'none'; // Cache le formulaire
+            successMessage.textContent = "Le message a été envoyé avec succès, un staff du refuge vous répondra au plus vite :)."; // Affiche un message de succès
+            errorMessage.textContent = ""; // Efface tout message d'erreur
         } else if(res.status == false){
+            // Si la réponse du serveur indique qu'il y a eu une erreur
             const errorscontainer = document.getElementById("errors-container");
-            
-            errorMessage.textContent = "Erreur lors de l'envoi du message : " + res.error; 
+            errorMessage.textContent = "Erreur lors de l'envoi du message : " + res.error; // Affiche un message d'erreur spécifique
         }
+        // Retire la classe CSS pour indiquer que la soumission est terminée
         submit.classList.remove("submitBtnConfirm");
     });
 });
